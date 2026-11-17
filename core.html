@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Core Philosophies — Neighborhood Connectivity & Human-Scale Streets</title>
+  <title>Principles — Guerilla Greenway</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     :root {
       --bg-page: #f5f6f3;
@@ -20,23 +21,30 @@
       --radius: 10px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
     html {
       scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      padding: 2.5rem 1.25rem 4.5rem;
+      padding: 0;
       background-color: var(--bg-page);
       color: var(--text-main);
+    }
+
+    /* Wraps the article below your full-width site header */
+    .page-wrapper {
+      padding: 2.5rem 1.25rem 4.5rem;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       font-size: 1.05rem;
       line-height: 1.72;
       -webkit-font-smoothing: antialiased;
+    }
+
+    .page-wrapper *,
+    .page-wrapper *::before,
+    .page-wrapper *::after {
+      box-sizing: border-box;
     }
 
     .container {
@@ -49,7 +57,7 @@
       overflow: hidden;
     }
 
-    /* Header */
+    /* Page Banner (uses div to avoid colliding with site header CSS) */
     .doc-header {
       padding: 3.25rem 3.5rem 2.5rem;
       background: linear-gradient(135deg, #1b432c 0%, #26593c 100%);
@@ -72,6 +80,7 @@
       line-height: 1.18;
       letter-spacing: -0.02em;
       font-weight: 800;
+      color: #ffffff;
     }
 
     .doc-subtitle {
@@ -82,7 +91,7 @@
       max-width: 64ch;
     }
 
-    /* Table of Contents */
+    /* Table of Contents (uses div to avoid colliding with site nav CSS) */
     .toc {
       padding: 1.5rem 3.5rem;
       background-color: var(--bg-subtle);
@@ -122,13 +131,13 @@
       padding: 2.75rem 3.5rem 3.5rem;
     }
 
-    section {
+    .content section {
       margin-bottom: 3.25rem;
       padding-bottom: 2.75rem;
       border-bottom: 1px solid var(--border-light);
     }
 
-    section:last-child {
+    .content section:last-child {
       margin-bottom: 0;
       padding-bottom: 0;
       border-bottom: none;
@@ -144,7 +153,7 @@
       margin-bottom: 0.35rem;
     }
 
-    h2 {
+    .content h2 {
       margin: 0 0 1.25rem;
       font-size: 1.6rem;
       line-height: 1.28;
@@ -152,31 +161,32 @@
       color: var(--text-main);
     }
 
-    h3 {
+    .content h3 {
       margin: 1.85rem 0 0.75rem;
       font-size: 1.18rem;
       line-height: 1.35;
       color: var(--text-main);
     }
 
-    p {
+    .content p {
       margin: 0 0 1.15rem;
     }
 
-    p:last-child {
+    .content p:last-child {
       margin-bottom: 0;
     }
 
-    ul, ol.styled-list {
+    .content ul,
+    .content ol.styled-list {
       margin: 0.75rem 0 1.35rem;
       padding-left: 1.4rem;
     }
 
-    li {
+    .content li {
       margin-bottom: 0.65rem;
     }
 
-    li strong {
+    .content li strong {
       color: var(--text-main);
     }
 
@@ -251,14 +261,14 @@
       border-radius: var(--radius);
     }
 
-    table {
+    .content table {
       width: 100%;
       border-collapse: collapse;
       font-size: 0.94rem;
       text-align: left;
     }
 
-    th {
+    .content th {
       background-color: var(--bg-subtle);
       color: var(--text-main);
       font-weight: 700;
@@ -266,19 +276,19 @@
       border-bottom: 1px solid var(--border-light);
     }
 
-    td {
+    .content td {
       padding: 0.85rem 1rem;
       border-bottom: 1px solid var(--border-light);
       vertical-align: top;
     }
 
-    tr:last-child td {
+    .content tr:last-child td {
       border-bottom: none;
     }
 
     /* Responsive & Print */
     @media (max-width: 680px) {
-      body {
+      .page-wrapper {
         padding: 0;
         background: var(--bg-surface);
       }
@@ -302,7 +312,11 @@
     }
 
     @media print {
-      body {
+      header {
+        display: none;
+      }
+
+      .page-wrapper {
         background: #ffffff;
         padding: 0;
         font-size: 10.5pt;
@@ -324,252 +338,270 @@
         display: none;
       }
 
-      section {
+      .content section {
         break-inside: avoid-page;
       }
     }
   </style>
 </head>
 <body>
-  <article class="container">
-    <header class="doc-header">
-      <span class="kicker">Guerrilla Greenway & Urban Connectivity</span>
-      <h1>Core Philosophies</h1>
-      <p class="doc-subtitle">
-        Reclaiming human-scale mobility, dismantling suburban severance, and making the case for open, connected neighborhoods.
-      </p>
-    </header>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="site-title">
+        <span>Guerilla Greenway</span>
+      </a>
+      <nav>
+        <a href="index.html">About</a>
+        <a href="history.html">Sprawl</a>
+        <a href="core.html" class="active">Principles</a>
+        <a href="prep.html">Get Involved</a>
+        <a href="safety.html">Safety Guidelines</a>
+        <a href="waiver.html">Volunteer Waiver</a>
+      </nav>
+    </div>
+  </header>
 
-    <nav class="toc" aria-label="Contents">
-      <p class="toc-title">Contents</p>
-      <ol>
-        <li><a href="#undoing-car-dependency">Undoing Policies That Discourage Car-Free Transportation</a></li>
-        <li><a href="#human-lives">Valuing Human Lives Over Car “Freedom”</a></li>
-        <li><a href="#reckless-driving">Treating Reckless Driving More Harshly</a></li>
-        <li><a href="#connectivity-security">Connectivity Is Not a Security Risk</a></li>
-        <li><a href="#pinch-points">Parcels Straddling Pinch Points</a></li>
-        <li><a href="#fences-and-blind-edges">Good Fences Keep Out Good Neighbors</a></li>
-        <li><a href="#walkability-economics">Walkability Is Economically Beneficial to Everyone</a></li>
-      </ol>
-    </nav>
+  <div class="page-wrapper">
+    <article class="container">
+      <div class="doc-header">
+        <span class="kicker">Guerilla Greenway & Urban Connectivity</span>
+        <h1>Core Principles</h1>
+        <p class="doc-subtitle">
+          Reclaiming human-scale mobility, dismantling suburban severance, and making the case for open, connected neighborhoods.
+        </p>
+      </div>
 
-    <main class="content">
-      <!-- SECTION 1 -->
-      <section id="undoing-car-dependency">
-        <span class="section-num">01 • Land Use & Policy</span>
-        <h2>Undoing Policies That Discourage Car-Free Transportation</h2>
-        <p>
-          Ever since the rapid suburbanization of the 20th century, the automobile has been king in the United States. This was not an organic free-market outcome—an organized coalition of industrial manufacturers, oil companies, real estate developers, retail corporations, and political lobbying groups systematically engineered car dependency into American law and geography. Much damage has been done, and we do not accept that electric vehicles alone will absolve these industries of decades of sprawl, asphalt bloat, and pollution.
-        </p>
-        <div class="callout policy">
-          <span class="callout-label">Our Position</span>
-          We support groups, organizations, and policies that incentivize denser development and walkable neighborhoods. We are encouraged to see cities like Raleigh, Durham, and Charlotte—alongside municipalities across the country—enacting zoning reform, eliminating mandatory parking minimums, and legalizing accessory dwelling units (ADUs).
-        </div>
-      </section>
+      <div class="toc" role="navigation" aria-label="Contents">
+        <p class="toc-title">Contents</p>
+        <ol>
+          <li><a href="#undoing-car-dependency">Undoing Policies That Discourage Car-Free Transportation</a></li>
+          <li><a href="#human-lives">Valuing Human Lives Over Car “Freedom”</a></li>
+          <li><a href="#reckless-driving">Treating Reckless Driving More Harshly</a></li>
+          <li><a href="#connectivity-security">Connectivity Is Not a Security Risk</a></li>
+          <li><a href="#pinch-points">Parcels Straddling Pinch Points</a></li>
+          <li><a href="#fences-and-blind-edges">Good Fences Keep Out Good Neighbors</a></li>
+          <li><a href="#walkability-economics">Walkability Is Economically Beneficial to Everyone</a></li>
+        </ol>
+      </div>
 
-      <!-- SECTION 2 -->
-      <section id="human-lives">
-        <span class="section-num">02 • Roadway Equity</span>
-        <h2>Human Lives Should Be Valued Over Car “Freedom”</h2>
-        <p>
-          Environmental psychologist Ian Walker coined the term <em>motonormativity</em> to describe the deeply embedded unconscious bias that treats driving as the default, rational baseline of human movement while treating walking, running, and cycling as abnormal exceptions. Under a motonormative worldview, imposing a 10-second delay on a driver is framed as an intolerable infringement on personal freedom, whereas forcing a pedestrian or runner onto a narrow shoulder beside 45 mph traffic is accepted as ordinary.
-        </p>
-        <p>
-          Dehumanization of cyclists is widespread among motorists who drive aggressively around people on bikes. Many drivers view pedestrians and cyclists on roadways as purely “recreational” hobbyists rather than taxpaying commuters and workers, convincing themselves they are righteous gatekeepers of the street. Because motorists are insulated inside two-ton soundproofed cabins, minor impatience routinely escalates into vehicular intimidation that would be prosecuted as assault in any other setting.
-        </p>
-        <p>
-          The actual kinematics do not come close to justifying drivers’ warped perceptions of delay:
-        </p>
-
-        <div class="stat-grid">
-          <div class="stat-card">
-            <span class="stat-value">10–15 sec</span>
-            <span class="stat-desc">Typical time added to a driver’s trip when yielding to a pedestrian at a crosswalk.</span>
+      <main class="content">
+        <!-- SECTION 1 -->
+        <section id="undoing-car-dependency">
+          <span class="section-num">01 • Land Use & Policy</span>
+          <h2>Undoing Policies That Discourage Car-Free Transportation</h2>
+          <p>
+            Ever since the rapid suburbanization of the 20th century, the automobile has been king in the United States. This was not an organic free-market outcome—an organized coalition of industrial manufacturers, oil companies, real estate developers, retail corporations, and political lobbying groups systematically engineered car dependency into American law and geography. Much damage has been done, and we do not accept that electric vehicles alone will absolve these industries of decades of sprawl, asphalt bloat, and pollution.
+          </p>
+          <div class="callout policy">
+            <span class="callout-label">Our Position</span>
+            We support groups, organizations, and policies that incentivize denser development and walkable neighborhoods. We are encouraged to see cities like Raleigh, Durham, and Charlotte—alongside municipalities across the country—enacting zoning reform, eliminating mandatory parking minimums, and legalizing accessory dwelling units (ADUs).
           </div>
-          <div class="stat-card">
-            <span class="stat-value">30–40 sec</span>
-            <span class="stat-desc">Typical net delay when waiting to pass a cyclist safely on a two-lane road.</span>
+        </section>
+
+        <!-- SECTION 2 -->
+        <section id="human-lives">
+          <span class="section-num">02 • Roadway Equity</span>
+          <h2>Human Lives Should Be Valued Over Car “Freedom”</h2>
+          <p>
+            Environmental psychologist Ian Walker coined the term <em>motonormativity</em> to describe the deeply embedded unconscious bias that treats driving as the default, rational baseline of human movement while treating walking, running, and cycling as abnormal exceptions. Under a motonormative worldview, imposing a 10-second delay on a driver is framed as an intolerable infringement on personal freedom, whereas forcing a pedestrian or runner onto a narrow shoulder beside 45 mph traffic is accepted as ordinary.
+          </p>
+          <p>
+            Dehumanization of cyclists is widespread among motorists who drive aggressively around people on bikes. Many drivers view pedestrians and cyclists on roadways as purely “recreational” hobbyists rather than taxpaying commuters and workers, convincing themselves they are righteous gatekeepers of the street. Because motorists are insulated inside two-ton soundproofed cabins, minor impatience routinely escalates into vehicular intimidation that would be prosecuted as assault in any other setting.
+          </p>
+          <p>
+            The actual kinematics do not come close to justifying drivers’ warped perceptions of delay:
+          </p>
+
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span class="stat-value">10–15 sec</span>
+              <span class="stat-desc">Typical time added to a driver’s trip when yielding to a pedestrian at a crosswalk.</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">30–40 sec</span>
+              <span class="stat-desc">Typical net delay when waiting to pass a cyclist safely on a two-lane road.</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">6,000 lb</span>
+              <span class="stat-desc">Weight of a modern truck or SUV wielded against an unshielded human body.</span>
+            </div>
           </div>
-          <div class="stat-card">
-            <span class="stat-value">6,000 lb</span>
-            <span class="stat-desc">Weight of a modern truck or SUV wielded against an unshielded human body.</span>
+
+          <p>
+            The physical risk between a person unprotected by a steel cage, crumple zones, and airbags versus one sealed inside a vehicle is wildly asymmetric. Because vulnerable road users will always yield to preserve their lives, aggressive drivers learn that creeping forward, revving, or tailgating is a guaranteed way to clear their path. Society reinforces this dynamic by shifting the moral and physical burden of safety onto the most vulnerable people—the ones not hiding behind the walls of their cars.
+          </p>
+          <p>
+            Modern vehicle cabins are engineered to isolate occupants from outside noise, weather, and physical sensation. Tinted windows, high beltlines, and acoustic glass eliminate eye contact—the primary human mechanism for signaling deference and empathy. Traffic psychologists note that this physical enclosure triggers a state of <em>deindividuation</em> similar to online disinhibition: the driver feels invisible and untouchable, reducing other human beings to inanimate obstacles blocking a trajectory.
+          </p>
+          <p>
+            Outside a vehicle, walking briskly toward a parent and child while shouting at them to get out of the way would be recognized immediately as harassment, triggering swift social intervention. Inside a vehicle, rolling a 6,000 lb machine within three feet of that same family to force them to hurry across the asphalt is routinely excused as normal “assertive” driving or simply being in a rush. Because the vehicle mediates the threat, society treats physical coercion as a minor etiquette issue rather than an act of intimidation. As long as roads and parking lots are engineered for vehicle speed rather than human presence—and as long as vehicles are designed and marketed to project physical superiority—drivers will continue using mass and momentum to force everyone else out of their way.
+          </p>
+        </section>
+
+        <!-- SECTION 3 -->
+        <section id="reckless-driving">
+          <span class="section-num">03 • Accountability & Law</span>
+          <h2>Reckless Driving Should Be Treated More Harshly</h2>
+          <p>
+            In the post-COVID era, reckless drivers have grown measurably more brazen. A sharp drop in routine traffic enforcement by police, multi-menu dashboard touchscreens, widespread screen addiction, lax treatment of speeding by traffic courts, the dominance of oversized trucks and SUVs, and the social normalization of speeding have all added fuel to the fire. Meanwhile, a large majority of drivers with suspended licenses continue driving anyway because states revoke a plastic card without restricting physical access to a vehicle.
+          </p>
+          <p>
+            Substance impairment has also grown deadlier and harder to prosecute. More motorists are driving high, and a rising share operate vehicles under the influence of multiple substances simultaneously; the most common combination—THC paired with alcohol—multiplies the risk of fatal crashes even when blood alcohol concentration (BAC) remains below the 0.08% legal limit. While states struggle to standardize roadside detection and statutory limits for non-alcohol drugs, preventable fatalities continue to mount.
+          </p>
+          <p>
+            Underlying this enforcement failure is an unspoken cultural assumption that because a car is often required to reach work and groceries, driving is an indispensable survival right rather than a revocable privilege—a bias to which the legal system is not immune. Defense attorneys routinely shift blame onto road design and pedestrian behavior when representing clients who kill people on foot, reframing vehicular manslaughter as an “unfortunate accident”. Prosecutors know that, unlike crimes everyday people cannot imagine committing, jurors drive daily, treat speeding as normal, and often text behind the wheel themselves—leading prosecutors to offer lenient plea deals rather than risk acquittal at trial.
+          </p>
+          <div class="callout policy">
+            <span class="callout-label">Our Position</span>
+            We support policies that physically remove habitually dangerous drivers from the road, treat impaired driving more severely, curb excessive vehicle speeds, reduce the proliferation of oversized passenger vehicles on neighborhood streets, and prioritize pedestrian protection over driver convenience.
           </div>
-        </div>
+        </section>
 
-        <p>
-          The physical risk between a person unprotected by a steel cage, crumple zones, and airbags versus one sealed inside a vehicle is wildly asymmetric. Because vulnerable road users will always yield to preserve their lives, aggressive drivers learn that creeping forward, revving, or tailgating is a guaranteed way to clear their path. Society reinforces this dynamic by shifting the moral and physical burden of safety onto the most vulnerable people—the ones not hiding behind the walls of their cars.
-        </p>
-        <p>
-          Modern vehicle cabins are engineered to isolate occupants from outside noise, weather, and physical sensation. Tinted windows, high beltlines, and acoustic glass eliminate eye contact—the primary human mechanism for signaling deference and empathy. Traffic psychologists note that this physical enclosure triggers a state of <em>deindividuation</em> similar to online disinhibition: the driver feels invisible and untouchable, reducing other human beings to inanimate obstacles blocking a trajectory.
-        </p>
-        <p>
-          Outside a vehicle, walking briskly toward a parent and child while shouting at them to get out of the way would be recognized immediately as harassment, triggering swift social intervention. Inside a vehicle, rolling a 6,000 lb machine within three feet of that same family to force them to hurry across the asphalt is routinely excused as normal “assertive” driving or simply being in a rush. Because the vehicle mediates the threat, society treats physical coercion as a minor etiquette issue rather than an act of intimidation. As long as roads and parking lots are engineered for vehicle speed rather than human presence—and as long as vehicles are designed and marketed to project physical superiority—drivers will continue using mass and momentum to force everyone else out of their way.
-        </p>
-      </section>
+        <!-- SECTION 4 -->
+        <section id="connectivity-security">
+          <span class="section-num">04 • Suburban Psychology & Safety</span>
+          <h2>Connectivity Is Not a Security Risk</h2>
+          <p>
+            Pearl-clutching suburbanites everywhere fear the person on foot. Because the physical layout of suburbia is exclusionary by design, anyone passing through without a car registers as unfamiliar and therefore suspect.
+          </p>
+          <p>
+            Suburbia is built on fragile psychological ground. Most Americans hold the bulk of their net worth in residential real estate, conditioning homeowners to view their neighborhood not as a shared civic commons, but as a vulnerable financial asset whose value depends on exclusivity. When social status is tied to living behind a buffer zone, opening a direct walkway to a neighboring subdivision or apartment complex feels like a personal demotion. Manicured suburban enclaves cultivate an aesthetic of sterile, predictable control; in that environment, an unvetted pedestrian crossing a property line triggers a visceral <em>contagion disgust</em> response—a fear that outside disorder or lower social status will bleed across the perimeter and taint the enclave’s purity.
+          </p>
+          <p>
+            Social psychology’s <em>Contact Hypothesis</em> demonstrates that routine, low-stakes exposure to diverse neighbors reduces prejudice and lowers threat perception. Sealed subdivisions engineer the exact opposite condition. By eliminating casual daily encounters on sidewalks, enclosed neighborhoods atrophy residents’ social resilience. In a connected neighborhood, seeing someone walk past is unremarkable background noise; in a sealed cul-de-sac, any unfamiliar face on foot registers as an acute anomaly, fueling hyper-vigilant Nextdoor posts, Ring camera surveillance loops, and unnecessary calls to police.
+          </p>
 
-      <!-- SECTION 3 -->
-      <section id="reckless-driving">
-        <span class="section-num">03 • Accountability & Law</span>
-        <h2>Reckless Driving Should Be Treated More Harshly</h2>
-        <p>
-          In the post-COVID era, reckless drivers have grown measurably more brazen. A sharp drop in routine traffic enforcement by police, multi-menu dashboard touchscreens, widespread screen addiction, lax treatment of speeding by traffic courts, the dominance of oversized trucks and SUVs, and the social normalization of speeding have all added fuel to the fire. Meanwhile, a large majority of drivers with suspended licenses continue driving anyway because states revoke a plastic card without restricting physical access to a vehicle.
-        </p>
-        <p>
-          Substance impairment has also grown deadlier and harder to prosecute. More motorists are driving high, and a rising share operate vehicles under the influence of multiple substances simultaneously; the most common combination—THC paired with alcohol—multiplies the risk of fatal crashes even when blood alcohol concentration (BAC) remains below the 0.08% legal limit. While states struggle to standardize roadside detection and statutory limits for non-alcohol drugs, preventable fatalities continue to mount.
-        </p>
-        <p>
-          Underlying this enforcement failure is an unspoken cultural assumption that because a car is often required to reach work and groceries, driving is an indispensable survival right rather than a revocable privilege—a bias to which the legal system is not immune. Defense attorneys routinely shift blame onto road design and pedestrian behavior when representing clients who kill people on foot, reframing vehicular manslaughter as an “unfortunate accident.” Prosecutors know that, unlike crimes everyday people cannot imagine committing, jurors drive daily, treat speeding as normal, and often text behind the wheel themselves—leading prosecutors to offer lenient plea deals rather than risk acquittal at trial.
-        </p>
-        <div class="callout policy">
-          <span class="callout-label">Our Position</span>
-          We support policies that physically remove habitually dangerous drivers from the road, treat impaired driving more severely, curb excessive vehicle speeds, reduce the proliferation of oversized passenger vehicles on neighborhood streets, and prioritize pedestrian protection over driver convenience.
-        </div>
-      </section>
+          <h3>The Reality of Suburban Crime and Unlit Paths</h3>
+          <p>
+            Virtually nobody is burglarizing houses and jogging away down a greenway with stolen televisions, despite popular suburban folklore. Suburban property crime relies on motor vehicles and arterial road access to transport goods quickly, and it thrives on enclosed, hidden spaces rather than open walkways. The very attributes that make a walled-off subdivision feel protected paradoxically make it more fragile and vulnerable to disorder than a connected neighborhood.
+          </p>
+          <p>
+            The geography of opportunistic crime follows two basic rules: go where disorder is unseen and tolerated, and go where targets exist. An unlit path at night may appear at first glance to meet the first condition, but it decisively fails the second. Offenders do not sit in dark woods for hours waiting for a lone walker who never arrives. Multi-mile trails close at dusk and see minimal night traffic, and completely dark stretches actually experience <em>less</em> late-night loitering than dimly lit areas with benches because total darkness is uncomfortable for hanging out. The few people who do use neighborhood paths after dark are ordinary residents walking a dog, jogging with a headlamp, or strolling with a partner—not imaginary highwaymen lying in wait.
+          </p>
 
-      <!-- SECTION 4 -->
-      <section id="connectivity-security">
-        <span class="section-num">04 • Suburban Psychology & Safety</span>
-        <h2>Connectivity Is Not a Security Risk</h2>
-        <p>
-          Pearl-clutching suburbanites everywhere fear the person on foot. Because the physical layout of suburbia is exclusionary by design, anyone passing through without a car registers as unfamiliar and therefore suspect.
-        </p>
-        <p>
-          Suburbia is built on fragile psychological ground. Most Americans hold the bulk of their net worth in residential real estate, conditioning homeowners to view their neighborhood not as a shared civic commons, but as a vulnerable financial asset whose value depends on exclusivity. When social status is tied to living behind a buffer zone, opening a direct walkway to a neighboring subdivision or apartment complex feels like a personal demotion. Manicured suburban enclaves cultivate an aesthetic of sterile, predictable control; in that environment, an unvetted pedestrian crossing a property line triggers a visceral <em>contagion disgust</em> response—a fear that outside disorder or lower social status will bleed across the perimeter and taint the enclave’s purity.
-        </p>
-        <p>
-          Social psychology’s <em>Contact Hypothesis</em> demonstrates that routine, low-stakes exposure to diverse neighbors reduces prejudice and lowers threat perception. Sealed subdivisions engineer the exact opposite condition. By eliminating casual daily encounters on sidewalks, enclosed neighborhoods atrophy residents’ social resilience. In a connected neighborhood, seeing someone walk past is unremarkable background noise; in a sealed cul-de-sac, any unfamiliar face on foot registers as an acute anomaly, fueling hyper-vigilant Nextdoor posts, Ring camera surveillance loops, and unnecessary calls to police.
-        </p>
+          <h3>Protecting the One Exception: Homes Directly Abutting a Path Entrance</h3>
+          <p>
+            While neighborhood-wide property values consistently rise with trail connectivity, the one legitimate exception involves the one or two homes whose yards directly border a new cut-through. Even when 95% of a neighborhood gains equity from improved walkability, it is unfair to ask the immediately adjacent homeowner to absorb a potential −1% to −5% localized privacy friction penalty on behalf of a public amenity. Fortunately, straightforward upfront design and governance tools eliminate that burden:
+          </p>
+          <ul class="styled-list">
+            <li><strong>City- or Developer-Funded Privacy Screening:</strong> Project capital budgets should cover installing a new 6-foot opaque privacy fence and a staggered evergreen buffer along abutting lot lines at zero cost to the homeowner, replacing aging chain-link boundaries and blocking eye-level sightlines.</li>
+            <li><strong>Fair-Market Compensation and Tax Abatements:</strong> When a municipality acquires a 10-to-15-foot easement strip from an existing lot, the owner should receive fair-market land value plus proximity compensation upfront, paired where available with a multi-year local property tax abatement.</li>
+            <li><strong>Recorded Maintenance and Liability Indemnification:</strong> Recording an explicit municipal or HOA maintenance covenant—guaranteeing biweekly mowing, trash removal, and snow clearing—alongside statutory liability immunity ensures the adjacent owner carries zero upkeep or legal exposure.</li>
+            <li><strong>Private Gate Access as a Resale Advantage:</strong> Once a connector is built with proper fencing, many abutting owners install a lockable private gate in their back fence. Direct, step-out access to a path network without crossing busy roads routinely turns a border lot into a sought-after premium listing for families, runners, and dog owners.</li>
+          </ul>
+        </section>
 
-        <h3>The Reality of Suburban Crime and Unlit Paths</h3>
-        <p>
-          Virtually nobody is burglarizing houses and jogging away down a greenway with stolen televisions, despite popular suburban folklore. Suburban property crime relies on motor vehicles and arterial road access to transport goods quickly, and it thrives on enclosed, hidden spaces rather than open walkways. The very attributes that make a walled-off subdivision feel protected paradoxically make it more fragile and vulnerable to disorder than a connected neighborhood.
-        </p>
-        <p>
-          The geography of opportunistic crime follows two basic rules: go where disorder is unseen and tolerated, and go where targets exist. An unlit path at night may appear at first glance to meet the first condition, but it decisively fails the second. Offenders do not sit in dark woods for hours waiting for a lone walker who never arrives. Multi-mile trails close at dusk and see minimal night traffic, and completely dark stretches actually experience <em>less</em> late-night loitering than dimly lit areas with benches because total darkness is uncomfortable for hanging out. The few people who do use neighborhood paths after dark are ordinary residents walking a dog, jogging with a headlamp, or strolling with a partner—not imaginary highwaymen lying in wait.
-        </p>
+        <!-- SECTION 5 -->
+        <section id="pinch-points">
+          <span class="section-num">05 • Chokepoints & Good Neighborliness</span>
+          <h2>Parcels Straddling Pinch Points Hold a Unique Opportunity</h2>
+          <p>
+            A lot sitting on the sole narrow gap between two severed neighborhoods carries that spatial pressure as an inherent physical attribute of the land—no different from buying a house next to an elementary school playground, under an airport flight path, or at the bottom of a drainage slope. Getting furious at neighbors for walking through an open gap is like buying a house in a valley and getting angry at rainwater for flowing downhill. The root cause of the friction is the developer who maximized lot yield by omitting a 10-foot public walkway and the municipality that approved a disconnected street grid. Directing anger at a neighbor walking their dog or a kid walking to school punishes ordinary people for adapting to broken infrastructure.
+          </p>
+          <p>
+            Under Anglo-American property law, the right to exclude others is a core tenet of private ownership. Unless a public pedestrian easement is recorded on the plat—or decades of continuous, unpermitted use satisfy the strict threshold for a <em>prescriptive easement</em>—a homeowner is legally entitled to object to uninvited passage and erect a fence. However, holding a legal right to exclude does not make outrage reasonable when someone buys a natural geographic bridge and expects human beings to ignore basic geometry.
+          </p>
 
-        <h3>Protecting the One Exception: Homes Directly Abutting a Path Entrance</h3>
-        <p>
-          While neighborhood-wide property values consistently rise with trail connectivity, the one legitimate exception involves the one or two homes whose yards directly border a new cut-through. Even when 95% of a neighborhood gains equity from improved walkability, it is unfair to ask the immediately adjacent homeowner to absorb a potential −1% to −5% localized privacy friction penalty on behalf of a public amenity. Fortunately, straightforward upfront design and governance tools eliminate that burden:
-        </p>
-        <ul class="styled-list">
-          <li><strong>City- or Developer-Funded Privacy Screening:</strong> Project capital budgets should cover installing a new 6-foot opaque privacy fence and a staggered evergreen buffer along abutting lot lines at zero cost to the homeowner, replacing aging chain-link boundaries and blocking eye-level sightlines.</li>
-          <li><strong>Fair-Market Compensation and Tax Abatements:</strong> When a municipality acquires a 10-to-15-foot easement strip from an existing lot, the owner should receive fair-market land value plus proximity compensation upfront, paired where available with a multi-year local property tax abatement.</li>
-          <li><strong>Recorded Maintenance and Liability Indemnification:</strong> Recording an explicit municipal or HOA maintenance covenant—guaranteeing biweekly mowing, trash removal, and snow clearing—alongside statutory liability immunity ensures the adjacent owner carries zero upkeep or legal exposure.</li>
-          <li><strong>Private Gate Access as a Resale Advantage:</strong> Once a connector is built with proper fencing, many abutting owners install a lockable private gate in their back fence. Direct, step-out access to a path network without crossing busy roads routinely turns a border lot into a sought-after premium listing for families, runners, and dog owners.</li>
-        </ul>
-      </section>
+          <h3>The Double Standard of Two-Street Through-Driveways</h3>
+          <p>
+            When a homeowner owns a parcel with a driveway spanning two roads, they practice <em>privatized permeability</em>—monopolizing a network shortcut for their own daily convenience while attempting to deny that exact same spatial efficiency to everyone else. By using the driveway to exit onto whichever street faces their destination, the owner proves every single day that going around the block is an unnecessary waste of time. Yet owners of double-frontage lots often grow indignant when a pedestrian crosses that same strip of asphalt, driven by three cognitive blind spots:
+          </p>
+          <ul class="styled-list">
+            <li><strong>Actor-Observer Asymmetry:</strong> When the homeowner cuts through their own driveway to shave three minutes off a commute, they view it as smart logistics. When a neighbor walks along the edge of that same asphalt to shave 15 minutes off a walk, the owner frames it as entitlement and boundary violation.</li>
+            <li><strong>Treating Passage as a Depletable Resource:</strong> Many owners react as though spatial passage were a finite commodity being stolen from them—feeling that neighbors are “free-riding” on asphalt they paid for, even though a person walking across concrete inflicts zero structural wear and takes nothing away from the owner’s ability to use it seconds later.</li>
+            <li><strong>Blindness to Architectural Cues:</strong> Homeowners become so accustomed to their own routine that they stop seeing what their lot looks like from the outside. Unlike a subtle dirt desire path in a wooded corner, an ungated, continuous paved driveway linking Street A to Street B carries zero plausible deniability at purchase and reads visually as an open thoroughfare. Expecting pedestrians to treat an open paved bridge as an invisible wall requires people to override obvious physical cues.</li>
+          </ul>
 
-      <!-- SECTION 5 -->
-      <section id="pinch-points">
-        <span class="section-num">05 • Chokepoints & Good Neighborliness</span>
-        <h2>Parcels Straddling Pinch Points Hold a Unique Opportunity</h2>
-        <p>
-          A lot sitting on the sole narrow gap between two severed neighborhoods carries that spatial pressure as an inherent physical attribute of the land—no different from buying a house next to an elementary school playground, under an airport flight path, or at the bottom of a drainage slope. Getting furious at neighbors for walking through an open gap is like buying a house in a valley and getting angry at rainwater for flowing downhill. The root cause of the friction is the developer who maximized lot yield by omitting a 10-foot public walkway and the municipality that approved a disconnected street grid. Directing anger at a neighbor walking their dog or a kid walking to school punishes ordinary people for adapting to broken infrastructure.
-        </p>
-        <p>
-          Under Anglo-American property law, the right to exclude others is a core tenet of private ownership. Unless a public pedestrian easement is recorded on the plat—or decades of continuous, unpermitted use satisfy the strict threshold for a <em>prescriptive easement</em>—a homeowner is legally entitled to object to uninvited passage and erect a fence. However, holding a legal right to exclude does not make outrage reasonable when someone buys a natural geographic bridge and expects human beings to ignore basic geometry.
-        </p>
+          <h3>Universal Principles for Keeping Chokepoints Open</h3>
+          <p>
+            Across every type of suburban pinch point—whether a two-street driveway, a wooded lot corner, an odd-angled grass wedge, or an ambiguously bounded HOA buffer—owners resist shortcuts out of three fears: losing control over their property, resenting uncompensated upkeep or liability, and worrying about strangers intruding near their living space. Framing openness around the owner’s own self-interest disarms all three:
+          </p>
+          <ul class="styled-list">
+            <li><strong>Affirm Control and Protect Title via Permissive License:</strong> When people feel their boundaries are ignored, they build walls to reassert authority. Thanking an owner or praising how well they maintain a border strip frames passage as a generous favor they control. Legally, granting casual, revocable permission converts “hostile” use into a <em>revocable license</em>—stopping the prescriptive easement clock dead in its tracks and preserving 100% clear title without fences or hostile signs.</li>
+            <li><strong>Trade Access for “Free Eyes” and Micro-Stewardship:</strong> Isolated wooded corners and dead-end strips frequently suffer from illegal yard-waste dumping, stray pets, or downed branches that go unnoticed for months. Regular, respectful neighbors who wave, know the owner’s name, yield when the owner is outside, and toss fallen sticks off the border become an informal neighborhood watch and early-warning system.</li>
+            <li><strong>Avoid the High Cost and Friction of Fencing:</strong> Fencing irregular lot angles, wooded corners, or active driveways costs $3,000 to $15,000+, creates tedious string-trimming strips along fence posts, forces owners to open and close gates on their own car trips, and often pushes foot traffic onto nicer sections of lawn.</li>
+          </ul>
+        </section>
 
-        <h3>The Double Standard of Two-Street Through-Driveways</h3>
-        <p>
-          When a homeowner owns a parcel with a driveway spanning two roads, they practice <em>privatized permeability</em>—monopolizing a network shortcut for their own daily convenience while attempting to deny that exact same spatial efficiency to everyone else. By using the driveway to exit onto whichever street faces their destination, the owner proves every single day that going around the block is an unnecessary waste of time. Yet owners of double-frontage lots often grow indignant when a pedestrian crosses that same strip of asphalt, driven by three cognitive blind spots:
-        </p>
-        <ul class="styled-list">
-          <li><strong>Actor-Observer Asymmetry:</strong> When the homeowner cuts through their own driveway to shave three minutes off a commute, they view it as smart logistics. When a neighbor walks along the edge of that same asphalt to shave 15 minutes off a walk, the owner frames it as entitlement and boundary violation.</li>
-          <li><strong>Treating Passage as a Depletable Resource:</strong> Many owners react as though spatial passage were a finite commodity being stolen from them—feeling that neighbors are “free-riding” on asphalt they paid for, even though a person walking across concrete inflicts zero structural wear and takes nothing away from the owner’s ability to use it seconds later.</li>
-          <li><strong>Blindness to Architectural Cues:</strong> Homeowners become so accustomed to their own routine that they stop seeing what their lot looks like from the outside. Unlike a subtle dirt desire path in a wooded corner, an ungated, continuous paved driveway linking Street A to Street B carries zero plausible deniability at purchase and reads visually as an open thoroughfare. Expecting pedestrians to treat an open paved bridge as an invisible wall requires people to override obvious physical cues.</li>
-        </ul>
+        <!-- SECTION 6 -->
+        <section id="fences-and-blind-edges">
+          <span class="section-num">06 • The Selective Exclusion Paradox</span>
+          <h2>Good Fences Keep Out Good Neighbors—and Give Bad Ones a Place to Hide</h2>
+          <p>
+            To be clear, we are not talking about a small backyard fence to keep dogs and toddlers safe, or screening out Bill next door who piles old lawnmowers along the property line, or blocking Nebby Nancy from calling the HOA over a patch of crabgrass she can see from her patio. Around immediate residential curtilage, privacy fencing makes complete sense. Perimeter fencing along larger parcels, ravines, and neighborhood boundaries is an entirely different phenomenon—and it counterintuitively breeds the exact disorder it is meant to prevent.
+          </p>
 
-        <h3>Universal Principles for Keeping Chokepoints Open</h3>
-        <p>
-          Across every type of suburban pinch point—whether a two-street driveway, a wooded lot corner, an odd-angled grass wedge, or an ambiguously bounded HOA buffer—owners resist shortcuts out of three fears: losing control over their property, resenting uncompensated upkeep or liability, and worrying about strangers intruding near their living space. Framing openness around the owner’s own self-interest disarms all three:
-        </p>
-        <ul class="styled-list">
-          <li><strong>Affirm Control and Protect Title via Permissive License:</strong> When people feel their boundaries are ignored, they build walls to reassert authority. Thanking an owner or praising how well they maintain a border strip frames passage as a generous favor they control. Legally, granting casual, revocable permission converts “hostile” use into a <em>revocable license</em>—stopping the prescriptive easement clock dead in its tracks and preserving 100% clear title without fences or hostile signs.</li>
-          <li><strong>Trade Access for “Free Eyes” and Micro-Stewardship:</strong> Isolated wooded corners and dead-end strips frequently suffer from illegal yard-waste dumping, stray pets, or downed branches that go unnoticed for months. Regular, respectful neighbors who wave, know the owner’s name, yield when the owner is outside, and toss fallen sticks off the border become an informal neighborhood watch and early-warning system.</li>
-          <li><strong>Avoid the High Cost and Friction of Fencing:</strong> Fencing irregular lot angles, wooded corners, or active driveways costs $3,000 to $15,000+, creates tedious string-trimming strips along fence posts, forces owners to open and close gates on their own car trips, and often pushes foot traffic onto nicer sections of lawn.</li>
-        </ul>
-      </section>
+          <div class="callout warning">
+            <span class="callout-label">The Selective Exclusion Paradox</span>
+            A standard chain-link, wood, or wrought-iron perimeter fence relies on social compliance rather than impenetrable security. It blocks rule-following guardians—dog walkers, joggers, and parents with strollers—while failing to stop anyone determined to walk around the end, slip through brush, or hop over. Once someone is behind the fence, the barrier stops protecting the property and starts shielding disorder from view.
+          </div>
 
-      <!-- SECTION 6 -->
-      <section id="fences-and-blind-edges">
-        <span class="section-num">06 • The Selective Exclusion Paradox</span>
-        <h2>Good Fences Keep Out Good Neighbors—and Give Bad Ones a Place to Hide</h2>
-        <p>
-          To be clear, we are not talking about a small backyard fence to keep dogs and toddlers safe, or screening out Bill next door who piles old lawnmowers along the property line, or blocking Nebby Nancy from calling the HOA over a patch of crabgrass she can see from her patio. Around immediate residential curtilage, privacy fencing makes complete sense. Perimeter fencing along larger parcels, ravines, and neighborhood boundaries is an entirely different phenomenon—and it counterintuitively breeds the exact disorder it is meant to prevent.
-        </p>
+          <p>
+            When an apartment complex or subdivision erects a perimeter fence along a wooded edge or topographical drop like a dry streambed, it manufactures a <em>blind edge</em>—land that legally belongs to the owner but is functionally abandoned in daily operations. Unhoused individuals seeking shelter and people looking to dump trash, tires, or appliances illegally actively choose sites with two attributes: visual concealment and zero predictable foot traffic. A fenced-off ravine or far wooded corner offers both. Once a few bags of trash or discarded clothes sit unseen for a month, visible neglect signals abandonment, locking in a self-reinforcing cycle of dumping and decay.
+          </p>
+          <p>
+            Removing a section of perimeter fence and replacing it with a simple, open walking path reverses that dynamic immediately:
+          </p>
+          <ul class="styled-list">
+            <li><strong>Eliminating Concealment Through Directional Flow:</strong> Connecting paths turn stagnant dead zones into active thoroughfares. Neighbors walking between complexes, subdivisions, or nearby shops move straight through former dark edges, removing the quiet, undisturbed cover required for dumping, vandalism, or encampments.</li>
+            <li><strong>An Unpaid Daily Inspection Crew:</strong> Security does not require constant policing—only unpredictable legitimate presence. Regular dog walkers and runners are consistently the first to spot clogged storm culverts before a flash flood, fallen limbs threatening power lines, broken glass, or brush-fire hazards, allowing property managers to fix a $100 issue before it becomes a $10,000 cleanup. Properties with active perimeter trails likewise see fewer car break-ins and catalytic converter thefts than complexes surrounded by unmonitored blind edges.</li>
+          </ul>
+        </section>
 
-        <div class="callout warning">
-          <span class="callout-label">The Selective Exclusion Paradox</span>
-          A standard chain-link, wood, or wrought-iron perimeter fence relies on social compliance rather than impenetrable security. It blocks rule-following guardians—dog walkers, joggers, and parents with strollers—while failing to stop anyone determined to walk around the end, slip through brush, or hop over. Once someone is behind the fence, the barrier stops protecting the property and starts shielding disorder from view.
-        </div>
+        <!-- SECTION 7 -->
+        <section id="walkability-economics">
+          <span class="section-num">07 • Fiscal & Real Estate Returns</span>
+          <h2>Walkability Is Economically Beneficial to Everyone</h2>
+          <p>
+            Suburban residents value cul-de-sacs because they eliminate fast cut-through car traffic, keeping residential streets quiet and safe for children. Traditional subdivision design, however, throws the baby out with the bathwater by blocking pedestrians and cyclists too. Installing a paved 8-to-10-foot connector path with entrance bollards achieves <em>filtered permeability</em>—preserving 100% of the traffic-calming benefits of a dead-end street for cars while restoring full grid connectivity on foot, stroller, or bicycle.
+          </p>
+          <p>
+            Fears that opening a connector will flood quiet streets with strangers ignore basic pedestrian physics. Unlike car trips, human walking trips follow a steep <em>distance-decay curve</em>: roughly 85% to 95% of routine foot traffic on a suburban connector comes from people living within a 0.25-to-0.5-mile radius (a 5-to-10-minute walk). Nobody drives across town to park and walk down a neighborhood path; the “outsiders” using an inter-neighborhood link are simply the families, dog walkers, and commuters who already live a few blocks away.
+          </p>
 
-        <p>
-          When an apartment complex or subdivision erects a perimeter fence along a wooded edge or topographical drop like a dry streambed, it manufactures a <em>blind edge</em>—land that legally belongs to the owner but is functionally abandoned in daily operations. Unhoused individuals seeking shelter and people looking to dump trash, tires, or appliances illegally actively choose sites with two attributes: visual concealment and zero predictable foot traffic. A fenced-off ravine or far wooded corner offers both. Once a few bags of trash or discarded clothes sit unseen for a month, visible neglect signals abandonment, locking in a self-reinforcing cycle of dumping and decay.
-        </p>
-        <p>
-          Removing a section of perimeter fence and replacing it with a simple, open walking path reverses that dynamic immediately:
-        </p>
-        <ul class="styled-list">
-          <li><strong>Eliminating Concealment Through Directional Flow:</strong> Connecting paths turn stagnant dead zones into active thoroughfares. Neighbors walking between complexes, subdivisions, or nearby shops move straight through former dark edges, removing the quiet, undisturbed cover required for dumping, vandalism, or encampments.</li>
-          <li><strong>An Unpaid Daily Inspection Crew:</strong> Security does not require constant policing—only unpredictable legitimate presence. Regular dog walkers and runners are consistently the first to spot clogged storm culverts before a flash flood, fallen limbs threatening power lines, broken glass, or brush-fire hazards, allowing property managers to fix a $100 issue before it becomes a $10,000 cleanup. Properties with active perimeter trails likewise see fewer car break-ins and catalytic converter thefts than complexes surrounded by unmonitored blind edges.</li>
-        </ul>
-      </section>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Stakeholder</th>
+                  <th>Economic Mechanism</th>
+                  <th>Documented Financial Impact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Homeowners & Multifamily</strong></td>
+                  <td>Destination walkability to schools, parks, retail, and transit expands buyer and renter demand across demographics.</td>
+                  <td><strong>+3% to +15%</strong> home price premium within 0.25 to 0.5 miles; faster leasing and stronger downturn resilience.</td>
+                </tr>
+                <tr>
+                  <td><strong>Municipalities</strong></td>
+                  <td>Short connectors remove 800-yard errands from congested arterials and reduce structural axle wear (fourth-power law).</td>
+                  <td><strong>$15,000–$45,000</strong> per path link vs. <strong>$2M–$8M</strong> to widen a single suburban intersection.</td>
+                </tr>
+                <tr>
+                  <td><strong>School Districts</strong></td>
+                  <td>Safe off-street connectors allow students living within 0.5 miles to walk rather than ride mandated “hazard buses”.</td>
+                  <td>A <strong>$30,000</strong> path letting 50 students walk saves <strong>$50,000–$90,000/yr</strong> (6-month payback).</td>
+                </tr>
+                <tr>
+                  <td><strong>HOA Boards</strong></td>
+                  <td>Dedicating a 10-foot public pedestrian easement retires depreciating perimeter fences from reserve studies.</td>
+                  <td>Eliminates <strong>$15,000–$60,000+</strong> in fence replacement costs every 12 to 20 years and shifts maintenance to the city.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-      <!-- SECTION 7 -->
-      <section id="walkability-economics">
-        <span class="section-num">07 • Fiscal & Real Estate Returns</span>
-        <h2>Walkability Is Economically Beneficial to Everyone</h2>
-        <p>
-          Suburban residents value cul-de-sacs because they eliminate fast cut-through car traffic, keeping residential streets quiet and safe for children. Traditional subdivision design, however, throws the baby out with the bathwater by blocking pedestrians and cyclists too. Installing a paved 8-to-10-foot connector path with entrance bollards achieves <em>filtered permeability</em>—preserving 100% of the traffic-calming benefits of a dead-end street for cars while restoring full grid connectivity on foot, stroller, or bicycle.
-        </p>
-        <p>
-          Fears that opening a connector will flood quiet streets with strangers ignore basic pedestrian physics. Unlike car trips, human walking trips follow a steep <em>distance-decay curve</em>: roughly 85% to 95% of routine foot traffic on a suburban connector comes from people living within a 0.25-to-0.5-mile radius (a 5-to-10-minute walk). Nobody drives across town to park and walk down a neighborhood path; the “outsiders” using an inter-neighborhood link are simply the families, dog walkers, and commuters who already live a few blocks away.
-        </p>
-
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Stakeholder</th>
-                <th>Economic Mechanism</th>
-                <th>Documented Financial Impact</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Homeowners & Multifamily</strong></td>
-                <td>Destination walkability to schools, parks, retail, and transit expands buyer and renter demand across demographics.</td>
-                <td><strong>+3% to +15%</strong> home price premium within 0.25 to 0.5 miles; faster leasing and stronger downturn resilience.</td>
-              </tr>
-              <tr>
-                <td><strong>Municipalities</strong></td>
-                <td>Short connectors remove 800-yard errands from congested arterials and reduce structural axle wear (fourth-power law).</td>
-                <td><strong>$15,000–$45,000</strong> per path link vs. <strong>$2M–$8M</strong> to widen a single suburban intersection.</td>
-              </tr>
-              <tr>
-                <td><strong>School Districts</strong></td>
-                <td>Safe off-street connectors allow students living within 0.5 miles to walk rather than ride mandated “hazard buses.”</td>
-                <td>A <strong>$30,000</strong> path letting 50 students walk saves <strong>$50,000–$90,000/yr</strong> (6-month payback).</td>
-              </tr>
-              <tr>
-                <td><strong>HOA Boards</strong></td>
-                <td>Dedicating a 10-foot public pedestrian easement retires depreciating perimeter fences from reserve studies.</td>
-                <td>Eliminates <strong>$15,000–$60,000+</strong> in fence replacement costs every 12 to 20 years and shifts maintenance to the city.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p>
-          Connective pedestrian paths deliver some of the highest returns on investment in local infrastructure because they leverage land that already exists rather than requiring billions in new highway right-of-way. Roughly 20% to 25% of all U.S. car trips are under 1 mile, and nearly half are under 3 miles. In severed cul-de-sac suburbs, those short errands clog collector intersections and impose heavy structural asphalt wear—under civil engineering’s fourth-power law, a single SUV inflicts hundreds of thousands of times more structural stress on pavement than a person walking or cycling.
-        </p>
-        <p>
-          In residential real estate, destination walkability is a permanent locational moat that no interior renovation can replicate. Car-only subdivisions exclude entire segments of modern buyers, whereas connected neighborhoods appeal simultaneously to parents tired of acting as full-time chauffeurs, remote workers seeking midday walkability, and older adults aging in place who want independence after they stop driving. When evaluated strictly through balance sheets rather than habit, walling off neighborhoods is an expensive luxury. A few hundred feet of concrete or compacted gravel converts isolated parcels into higher-yielding assets, trims municipal and school operating budgets, and keeps thousands of dollars per household circulating in the local economy instead of vanishing into vehicle depreciation and fuel.
-        </p>
-      </section>
-    </main>
-  </article>
+          <p>
+            Connective pedestrian paths deliver some of the highest returns on investment in local infrastructure because they leverage land that already exists rather than requiring billions in new highway right-of-way. Roughly 20% to 25% of all U.S. car trips are under 1 mile, and nearly half are under 3 miles. In severed cul-de-sac suburbs, those short errands clog collector intersections and impose heavy structural asphalt wear—under civil engineering’s fourth-power law, a single SUV inflicts hundreds of thousands of times more structural stress on pavement than a person walking or cycling.
+          </p>
+          <p>
+            In residential real estate, destination walkability is a permanent locational moat that no interior renovation can replicate. Car-only subdivisions exclude entire segments of modern buyers, whereas connected neighborhoods appeal simultaneously to parents tired of acting as full-time chauffeurs, remote workers seeking midday walkability, and older adults aging in place who want independence after they stop driving. When evaluated strictly through balance sheets rather than habit, walling off neighborhoods is an expensive luxury. A few hundred feet of concrete or compacted gravel converts isolated parcels into higher-yielding assets, trims municipal and school operating budgets, and keeps thousands of dollars per household circulating in the local economy instead of vanishing into vehicle depreciation and fuel.
+          </p>
+        </section>
+      </main>
+    </article>
+  </div>
 </body>
 </html>
