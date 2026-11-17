@@ -56,10 +56,10 @@ header {
 }
 
 .site-logo {
-  height: 150px;
+  height: 300px;
   width: auto;
   display: block;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 nav {
