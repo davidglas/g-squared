@@ -36,12 +36,25 @@ header {
   z-index: 10;
 }
 
-/* Injects the logo on the far left of the top bar */
+.nav-container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0.5rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  gap: 0.75rem;
+}
+
+/* Logo on the far left */
 .nav-container::before {
   content: "";
+  order: 1;
   display: block;
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   background-image: url("contour_logo.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -49,43 +62,20 @@ header {
   flex-shrink: 0;
 }
 
-/* Keeps the navigation links in the center */
+/* Navigation tabs in the middle */
 nav {
   order: 2;
   display: flex;
-  gap: 0.25rem;
-  flex-wrap: wrap;
-}
-
-/* Moves the organization name to the far right */
-.site-title {
-  order: 3;
-  font-weight: 700;
-  font-size: 1.125rem;
-  color: var(--text);
-  text-decoration: none;
-  letter-spacing: -0.01em;
-}
-
-.site-logo {
-  height: 160px;
-  width: auto;
-  display: block;
-  border-radius: 2px;
-}
-
-nav {
-  display: flex;
-  gap: 0.25rem;
+  gap: 0.2rem;
   flex-wrap: wrap;
 }
 
 nav a {
   text-decoration: none;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 500;
-  padding: 0.5rem 0.85rem;
+  padding: 0.45rem 0.75rem;
   border-radius: 6px;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
@@ -99,6 +89,17 @@ nav a.active {
   background-color: #f0fdfa;
   color: var(--accent);
   font-weight: 600;
+}
+
+/* Organization name on the far right */
+.site-title {
+  order: 3;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 /* Main Content Area */
