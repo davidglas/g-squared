@@ -1,3 +1,7 @@
+html {
+  scrollbar-gutter: stable;
+}
+
 :root {
   --bg: #f8fafc;
   --surface: #ffffff;
