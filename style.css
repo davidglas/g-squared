@@ -27,7 +27,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Top Navigation Bar */
+/* Top Navigation Bar (Desktop) */
 header {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
@@ -130,6 +130,12 @@ h2 {
   letter-spacing: -0.01em;
 }
 
+h3 {
+  margin-top: 1.25rem;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
 p, li {
   color: #1e293b;
 }
@@ -140,6 +146,27 @@ ul, ol {
 
 li {
   margin-bottom: 0.5rem;
+}
+
+/* About Page Q&A Sections */
+.faq-item {
+  margin-bottom: 1.75rem;
+}
+
+.faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq-item h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  font-size: 1.15rem;
+}
+
+.faq-item p {
+  margin-top: 0;
+  margin-bottom: 0.85rem;
 }
 
 /* Highlight / Safety Callout Box */
@@ -171,6 +198,11 @@ li {
 footer {
   max-width: 820px;
   margin: 3rem auto 2rem;
+  padding: 0 1.25rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
 
 /* Mobile Formatting (iPhone mini & phones) */
 @media (max-width: 768px) {
@@ -184,20 +216,17 @@ footer {
     gap: 0.5rem;
   }
 
-  /* Compact logo on top-left */
   .nav-container::before {
     order: 1;
     width: 54px;
     height: 44px;
   }
 
-  /* Org name on top-right */
   .site-title {
     order: 2;
     font-size: 1.05rem;
   }
 
-  /* Single-row swipeable tab bar underneath */
   nav {
     order: 3;
     width: 100%;
@@ -220,7 +249,6 @@ footer {
     padding: 0.35rem 0.65rem;
   }
 
-  /* Slightly tighter page margins so text has room to breathe */
   main {
     margin: 1.25rem auto;
     padding: 0 0.85rem;
@@ -229,9 +257,4 @@ footer {
   .card {
     padding: 1.35rem;
   }
-}
-  padding: 0 1.25rem;
-  font-size: 0.85rem;
-  color: var(--muted);
-  text-align: center;
 }
