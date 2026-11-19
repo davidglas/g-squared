@@ -64,16 +64,6 @@
       color: #ffffff;
     }
 
-    .kicker {
-      display: inline-block;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #b7d7c3;
-      margin-bottom: 0.75rem;
-    }
-
     .doc-header h1 {
       margin: 0 0 0.85rem;
       font-size: 2.4rem;
@@ -133,14 +123,47 @@
 
     .content section {
       margin-bottom: 3.25rem;
-      padding-bottom: 2.75rem;
-      border-bottom: 1px solid var(--border-light);
     }
 
     .content section:last-child {
       margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
+    }
+
+    /* Chapter Epigraphs — centered horizontally & vertically on white between two rules */
+    .epigraph {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      padding: 2.25rem 1.5rem;
+      margin: 0 0 2.25rem;
+    }
+
+    .epigraph p {
+      margin: 0 0 0.65rem;
+      max-width: 54ch;
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: #2b3831;
+    }
+
+    .epigraph footer {
+      font-size: 0.85rem;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.01em;
+    }
+
+    .epigraph cite {
+      font-style: italic;
+      font-weight: 500;
     }
 
     .section-num {
@@ -166,37 +189,6 @@
       font-size: 1.18rem;
       line-height: 1.35;
       color: var(--text-main);
-    }
-
-    /* Chapter Epigraphs */
-    .epigraph {
-      margin: 0 0 1.65rem;
-      padding: 1rem 1.35rem;
-      background-color: var(--bg-page);
-      border-left: 3px solid #7ea38d;
-      border-radius: 0 var(--radius) var(--radius) 0;
-    }
-
-    .epigraph p {
-      margin: 0 0 0.55rem;
-      font-family: Georgia, "Times New Roman", serif;
-      font-style: italic;
-      font-size: 0.98rem;
-      line-height: 1.62;
-      color: #2b3831;
-    }
-
-    .epigraph footer {
-      font-size: 0.84rem;
-      font-style: normal;
-      font-weight: 600;
-      color: var(--text-muted);
-      letter-spacing: 0.01em;
-    }
-
-    .epigraph cite {
-      font-style: italic;
-      font-weight: 500;
     }
 
     .content p {
@@ -399,7 +391,6 @@
   <div class="page-wrapper">
     <article class="container">
       <div class="doc-header">
-        <span class="kicker">Guerilla Greenway & Urban Connectivity</span>
         <h1>Core Principles</h1>
         <p class="doc-subtitle">
           Reclaiming human-scale mobility, dismantling suburban severance, and making the case for open, connected neighborhoods.
@@ -423,8 +414,6 @@
       <main class="content">
         <!-- SECTION 01 -->
         <section id="walkability-economics">
-          <span class="section-num">01 • Fiscal & Real Estate Returns</span>
-          <h2>Walkability Is Economically Beneficial to Everyone</h2>
           <blockquote class="epigraph">
             <p>
               Before I built a wall I’d ask to know<br />
@@ -433,6 +422,8 @@
             </p>
             <footer>— Robert Frost, <cite>Mending Wall</cite></footer>
           </blockquote>
+          <span class="section-num">01 • Fiscal & Real Estate Returns</span>
+          <h2>Walkability Is Economically Beneficial to Everyone</h2>
           <p>
             Suburban residents value cul-de-sacs because they eliminate fast cut-through car traffic, keeping residential streets quiet and safe for children. Traditional subdivision design, however, throws the baby out with the bathwater by blocking pedestrians and cyclists too. Installing a paved 8-to-10-foot connector path with entrance bollards achieves <em>filtered permeability</em>—preserving 100% of the traffic-calming benefits of a dead-end street for cars while restoring full grid connectivity on foot, stroller, or bicycle.
           </p>
@@ -484,8 +475,6 @@
 
         <!-- SECTION 02 -->
         <section id="fences-and-blind-edges">
-          <span class="section-num">02 • The Selective Exclusion Paradox</span>
-          <h2>Good Fences Keep Out Good Neighbors—and Give Bad Ones a Place to Hide</h2>
           <blockquote class="epigraph">
             <p>
               It is their nature to be dark<br />
@@ -495,6 +484,8 @@
             </p>
             <footer>— Howard Nemerov, <cite>Pockets</cite></footer>
           </blockquote>
+          <span class="section-num">02 • The Selective Exclusion Paradox</span>
+          <h2>Good Fences Keep Out Good Neighbors—and Give Bad Ones a Place to Hide</h2>
           <p>
             To be clear, we are not talking about a small backyard fence to keep dogs and toddlers safe, or screening out Bill next door who piles old lawnmowers along the property line, or blocking Nebby Nancy from calling the HOA over a patch of crabgrass she can see from her patio. Around immediate residential curtilage, privacy fencing makes complete sense. Perimeter fencing along larger parcels, ravines, and neighborhood boundaries is an entirely different phenomenon—and it counterintuitively breeds the exact disorder it is meant to prevent.
           </p>
@@ -518,8 +509,6 @@
 
         <!-- SECTION 03 -->
         <section id="connectivity-security">
-          <span class="section-num">03 • Suburban Psychology & Safety</span>
-          <h2>Connectivity Is Not a Security Risk</h2>
           <blockquote class="epigraph">
             <p>
               Everyone I knew was living<br />
@@ -529,6 +518,8 @@
             </p>
             <footer>— Tracy K. Smith, <cite>Garden of Eden</cite></footer>
           </blockquote>
+          <span class="section-num">03 • Suburban Psychology & Safety</span>
+          <h2>Connectivity Is Not a Security Risk</h2>
           <p>
             Pearl-clutching suburbanites everywhere fear the person on foot. Because the physical layout of suburbia is exclusionary by design, anyone passing through without a car registers as unfamiliar and therefore suspect.
           </p>
@@ -561,8 +552,6 @@
 
         <!-- SECTION 04 -->
         <section id="pinch-points">
-          <span class="section-num">04 • Chokepoints & Good Neighborliness</span>
-          <h2>Parcels Straddling Pinch Points Hold a Unique Opportunity</h2>
           <blockquote class="epigraph">
             <p>
               This subdivision is supposed to be off limits to me,<br />
@@ -572,6 +561,8 @@
             </p>
             <footer>— CMarie Fuhrman, <cite>Trespass</cite></footer>
           </blockquote>
+          <span class="section-num">04 • Chokepoints & Good Neighborliness</span>
+          <h2>Parcels Straddling Pinch Points Hold a Unique Opportunity</h2>
           <p>
             A lot sitting on the sole narrow gap between two severed neighborhoods carries that spatial pressure as an inherent physical attribute of the land—no different from buying a house next to an elementary school playground, under an airport flight path, or at the bottom of a drainage slope. Getting furious at neighbors for walking through an open gap is like buying a house in a valley and getting angry at rainwater for flowing downhill. The root cause of the friction is the developer who maximized lot yield by omitting a 10-foot public walkway and the municipality that approved a disconnected street grid. Directing anger at a neighbor walking their dog or a kid walking to school punishes ordinary people for adapting to broken infrastructure.
           </p>
@@ -584,4 +575,181 @@
             When a homeowner owns a parcel with a driveway spanning two roads, they practice <em>privatized permeability</em>—monopolizing a network shortcut for their own daily convenience while attempting to deny that exact same spatial efficiency to everyone else. By using the driveway to exit onto whichever street faces their destination, the owner proves every single day that going around the block is an unnecessary waste of time. Yet owners of double-frontage lots often grow indignant when a pedestrian crosses that same strip of asphalt, driven by three cognitive blind spots:
           </p>
           <ul class="styled-list">
-            <li><strong>Actor-Observer Asymmetry:</strong> When the homeowner cuts through their own driveway to shave three minutes off a commute, they view it as smart logistics. When a neighbor walks along the edge of that same asphalt to shave
+            <li><strong>Actor-Observer Asymmetry:</strong> When the homeowner cuts through their own driveway to shave three minutes off a commute, they view it as smart logistics. When a neighbor walks along the edge of that same asphalt to shave 15 minutes off a walk, the owner frames it as entitlement and boundary violation.</li>
+            <li><strong>Treating Passage as a Depletable Resource:</strong> Many owners react as though spatial passage were a finite commodity being stolen from them—feeling that neighbors are “free-riding” on asphalt they paid for, even though a person walking across concrete inflicts zero structural wear and takes nothing away from the owner’s ability to use it seconds later.</li>
+            <li><strong>Blindness to Architectural Cues:</strong> Homeowners become so accustomed to their own routine that they stop seeing what their lot looks like from the outside. Unlike a subtle dirt desire path in a wooded corner, an ungated, continuous paved driveway linking Street A to Street B carries zero plausible deniability at purchase and reads visually as an open thoroughfare. Expecting pedestrians to treat an open paved bridge as an invisible wall requires people to override obvious physical cues.</li>
+          </ul>
+
+          <h3>Universal Principles for Keeping Chokepoints Open</h3>
+          <p>
+            Across every type of suburban pinch point—whether a two-street driveway, a wooded lot corner, an odd-angled grass wedge, or an ambiguously bounded HOA buffer—owners resist shortcuts out of three fears: losing control over their property, resenting uncompensated upkeep or liability, and worrying about strangers intruding near their living space. Framing openness around the owner’s own self-interest disarms all three:
+          </p>
+          <ul class="styled-list">
+            <li><strong>Affirm Control and Protect Title via Permissive License:</strong> When people feel their boundaries are ignored, they build walls to reassert authority. Thanking an owner or praising how well they maintain a border strip frames passage as a generous favor they control. Legally, granting casual, revocable permission converts “hostile” use into a <em>revocable license</em>—stopping the prescriptive easement clock dead in its tracks and preserving 100% clear title without fences or hostile signs.</li>
+            <li><strong>Trade Access for “Free Eyes” and Micro-Stewardship:</strong> Isolated wooded corners and dead-end strips frequently suffer from illegal yard-waste dumping, stray pets, or downed branches that go unnoticed for months. Regular, respectful neighbors who wave, know the owner’s name, yield when the owner is outside, and toss fallen sticks off the border become an informal neighborhood watch and early-warning system.</li>
+            <li><strong>Avoid the High Cost and Friction of Fencing:</strong> Fencing irregular lot angles, wooded corners, or active driveways costs $3,000 to $15,000+, creates tedious string-trimming strips along fence posts, forces owners to open and close gates on their own car trips, and often pushes foot traffic onto nicer sections of lawn.</li>
+          </ul>
+        </section>
+
+        <!-- SECTION 05 -->
+        <section id="sustainability">
+          <blockquote class="epigraph">
+            <p>
+              …pressing your child-face on the chain link,<br />
+              while way deep down it whispers or coos:<br />
+              “i will grow, get colder, denser, of great<br />
+              darkness, till nothing more escapes my rule,<br />
+              no star, no grain of dust, not even light.” …
+            </p>
+            <footer>— Jan Wagner, <cite>tires</cite></footer>
+          </blockquote>
+          <span class="section-num">05 • Climate & Sustainable Development</span>
+          <h2>Climate Resilience & Practical Sustainability</h2>
+          <p>
+            A watertight environmental case for neighborhood connectivity does not require pretending that every suburban cul-de-sac sits a quarter mile from a corner grocery store. In outer-ring suburbs, daily destinations are often 1.5 to 3 miles away—too far for most people to haul groceries on foot, yet the exact sweet spot for bicycles, cargo bikes, and e-bikes. Even in sprawling subdivisions, small micro-connectors act as the missing links that stitch quiet residential streets into a continuous, low-stress network, unlocking car-free errands and transit access without waiting decades for new commercial zoning.
+          </p>
+
+          <ul class="styled-list">
+            <li><strong>Unlocking the 1-to-3-Mile Bike and E-Bike Shed:</strong> Suburbanites rarely skip a 2-mile bike ride because of distance; they skip it because severed cul-de-sacs force them onto a 45 mph multi-lane arterial road with no shoulder just to exit their neighborhood. A 100-foot cut-through between dead-end streets lets riders bypass high-speed collector roads entirely, turning a stressful 10-minute drive into an easy, safe 10-minute ride.</li>
+            <li><strong>Eliminating High-Polluting “Cold-Start” Trips:</strong> For internal combustion engines, short trips under 3 miles are disproportionately dirty per mile because catalytic converters need several minutes to reach operating temperature (roughly 600°F to 800°F). During a 1.5-mile cold-start drive to school or the store, engines vent elevated levels of unburned hydrocarbons, nitrogen oxides (NO<sub>x</sub>), carbon monoxide, and CO<sub>2</sub> directly inside residential neighborhoods.</li>
+            <li><strong>Why EVs Alone Will Not Solve Sprawl:</strong> Swapping a 5,000 lb gas SUV for a 6,000 lb electric SUV does nothing to reduce land-use sprawl, traffic congestion, or non-exhaust emissions. Heavier electric vehicles actually generate <em>more</em> fine particulate matter (PM<sub>2.5</sub>) from tire and road wear while still demanding battery-mineral extraction and acres of impervious asphalt. The cleanest trip is one that never requires two tons of metal to move one person a mile and a half.</li>
+            <li><strong>Preventing Asphalt Creep and Watershed Runoff:</strong> Producing asphalt and Portland cement carries a heavy embodied carbon footprint, and every unnecessary road widening or parking expansion increases impervious surface area—accelerating stormwater runoff, streambank erosion in local ravines, and urban heat island warming. Narrow, tree-shaded connectors preserve canopy and soil infiltration while delivering immediate mobility gains.</li>
+            <li><strong>Solving the Suburban “Last-Mile” Transit Trap:</strong> Many suburban bus stops sit within a 0.5-mile straight-line walk of residential neighborhoods yet suffer low ridership because perimeter walls turn a 7-minute walk into a 25-minute detour along a highway. Direct perimeter walkways expand the walkable catchment area around existing bus lines at minimal cost.</li>
+          </ul>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>UN Sustainable Development Goal</th>
+                  <th>Direct Local Mechanism</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>SDG 11: Sustainable Cities & Communities</strong></td>
+                  <td>Advances <strong>Target 11.2</strong> (safe, accessible transport systems for all ages) and <strong>Target 11.7</strong> (universal access to safe, inclusive green and public spaces).</td>
+                </tr>
+                <tr>
+                  <td><strong>SDG 13: Climate Action</strong></td>
+                  <td>Delivers immediate, zero-regret reductions in transport greenhouse gases by replacing short cold-start car trips rather than waiting decades for full fleet turnover.</td>
+                </tr>
+                <tr>
+                  <td><strong>SDG 3: Good Health & Well-Being</strong></td>
+                  <td>Cuts road traffic deaths and injuries (<strong>Target 3.6</strong>), reduces local exposure to tailpipe and tire-wear PM<sub>2.5</sub> pollution (<strong>Target 3.9</strong>), and integrates daily physical activity into routine errands.</td>
+                </tr>
+                <tr>
+                  <td><strong>SDG 9 & SDG 15: Resilient Infrastructure & Land</strong></td>
+                  <td>Retrofits existing suburban street networks into low-carbon, resilient infrastructure without clearing greenfield land or expanding impervious pavement into local watersheds.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 06 -->
+        <section id="human-lives">
+          <blockquote class="epigraph">
+            <p>
+              …here waiting at the intersection, our insides<br />
+              fruiting with malice, we wish you harm, we look<br />
+              down on you from our vehicles, we see you<br />
+              for who you really are. We think you are<br />
+              all wrong, and for a moment we are<br />
+              united in your seething wrongness…
+            </p>
+            <footer>— D.M. Spratley, <cite>Putting Everyone at Risk</cite></footer>
+          </blockquote>
+          <span class="section-num">06 • Roadway Equity</span>
+          <h2>Human Lives Should Be Valued Over Car “Freedom”</h2>
+          <p>
+            Environmental psychologist Ian Walker coined the term <em>motonormativity</em> to describe the deeply embedded unconscious bias that treats driving as the default, rational baseline of human movement while treating walking, running, and cycling as abnormal exceptions. Under a motonormative worldview, imposing a 10-second delay on a driver is framed as an intolerable infringement on personal freedom, whereas forcing a pedestrian or runner onto a narrow shoulder beside 45 mph traffic is accepted as ordinary.
+          </p>
+          <p>
+            Dehumanization of cyclists is widespread among motorists who drive aggressively around people on bikes. Many drivers view pedestrians and cyclists on roadways as purely “recreational” hobbyists rather than taxpaying commuters and workers, convincing themselves they are righteous gatekeepers of the street. Because motorists are insulated inside two-ton soundproofed cabins, minor impatience routinely escalates into vehicular intimidation that would be prosecuted as assault in any other setting.
+          </p>
+          <p>
+            The actual kinematics do not come close to justifying drivers’ warped perceptions of delay:
+          </p>
+
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span class="stat-value">10–15 sec</span>
+              <span class="stat-desc">Typical time added to a driver’s trip when yielding to a pedestrian at a crosswalk.</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">30–40 sec</span>
+              <span class="stat-desc">Typical net delay when waiting to pass a cyclist safely on a two-lane road.</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">6,000 lb</span>
+              <span class="stat-desc">Weight of a modern truck or SUV wielded against an unshielded human body.</span>
+            </div>
+          </div>
+
+          <p>
+            The physical risk between a person unprotected by a steel cage, crumple zones, and airbags versus one sealed inside a vehicle is wildly asymmetric. Because vulnerable road users will always yield to preserve their lives, aggressive drivers learn that creeping forward, revving, or tailgating is a guaranteed way to clear their path. Society reinforces this dynamic by shifting the moral and physical burden of safety onto the most vulnerable people—the ones not hiding behind the walls of their cars.
+          </p>
+          <p>
+            Modern vehicle cabins are engineered to isolate occupants from outside noise, weather, and physical sensation. Tinted windows, high beltlines, and acoustic glass eliminate eye contact—the primary human mechanism for signaling deference and empathy. Traffic psychologists note that this physical enclosure triggers a state of <em>deindividuation</em> similar to online disinhibition: the driver feels invisible and untouchable, reducing other human beings to inanimate obstacles blocking a trajectory.
+          </p>
+          <p>
+            Outside a vehicle, walking briskly toward a parent and child while shouting at them to get out of the way would be recognized immediately as harassment, triggering swift social intervention. Inside a vehicle, rolling a 6,000 lb machine within three feet of that same family to force them to hurry across the asphalt is routinely excused as normal “assertive” driving or simply being in a rush. Because the vehicle mediates the threat, society treats physical coercion as a minor etiquette issue rather than an act of intimidation. As long as roads and parking lots are engineered for vehicle speed rather than human presence—and as long as vehicles are designed and marketed to project physical superiority—drivers will continue using mass and momentum to force everyone else out of their way.
+          </p>
+        </section>
+
+        <!-- SECTION 07 -->
+        <section id="reckless-driving">
+          <blockquote class="epigraph">
+            <p>
+              For a breathy moment, she stops<br />
+              on the world’s edge, & then quick as that<br />
+              masters the stars & again slips the noose<br />
+              & darts straight between sedans & SUVs.
+            </p>
+            <footer>— Yusef Komunyakaa, <cite>Crossing a City Highway</cite></footer>
+          </blockquote>
+          <span class="section-num">07 • Accountability & Law</span>
+          <h2>Reckless Driving Should Be Treated More Harshly</h2>
+          <p>
+            In the post-COVID era, reckless drivers have grown measurably more brazen. A sharp drop in routine traffic enforcement by police, multi-menu dashboard touchscreens, widespread screen addiction, lax treatment of speeding by traffic courts, the dominance of oversized trucks and SUVs, and the social normalization of speeding have all added fuel to the fire. Meanwhile, a large majority of drivers with suspended licenses continue driving anyway because states revoke a plastic card without restricting physical access to a vehicle.
+          </p>
+          <p>
+            Substance impairment has also grown deadlier and harder to prosecute. More motorists are driving high, and a rising share operate vehicles under the influence of multiple substances simultaneously; the most common combination—THC paired with alcohol—multiplies the risk of fatal crashes even when blood alcohol concentration (BAC) remains below the 0.08% legal limit. While states struggle to standardize roadside detection and statutory limits for non-alcohol drugs, preventable fatalities continue to mount.
+          </p>
+          <p>
+            Underlying this enforcement failure is an unspoken cultural assumption that because a car is often required to reach work and groceries, driving is an indispensable survival right rather than a revocable privilege—a bias to which the legal system is not immune. Defense attorneys routinely shift blame onto road design and pedestrian behavior when representing clients who kill people on foot, reframing vehicular manslaughter as an “unfortunate accident”. Prosecutors know that, unlike crimes everyday people cannot imagine committing, jurors drive daily, treat speeding as normal, and often text behind the wheel themselves—leading prosecutors to offer lenient plea deals rather than risk acquittal at trial.
+          </p>
+          <div class="callout policy">
+            <span class="callout-label">Our Position</span>
+            We support policies that physically remove habitually dangerous drivers from the road, treat impaired driving more severely, curb excessive vehicle speeds, reduce the proliferation of oversized passenger vehicles on neighborhood streets, and prioritize pedestrian protection over driver convenience.
+          </div>
+        </section>
+
+        <!-- SECTION 08 -->
+        <section id="undoing-car-dependency">
+          <blockquote class="epigraph">
+            <p>
+              A bank offered<br />
+              low interest, veterans no down.<br />
+              In every closet they’d make love.<br />
+              They’d space out bushes, lay toast<br />
+              and coffee on the porch.
+            </p>
+            <footer>— David Roderick, <cite>Build Your Dream Home Here</cite></footer>
+          </blockquote>
+          <span class="section-num">08 • Land Use & Policy</span>
+          <h2>Undoing Policies That Discourage Car-Free Transportation</h2>
+          <p>
+            Ever since the rapid suburbanization of the 20th century, the automobile has been king in the United States. This was not an organic free-market outcome—an organized coalition of industrial manufacturers, oil companies, real estate developers, retail corporations, and political lobbying groups systematically engineered car dependency into American law and geography. Much damage has been done, and we do not accept that electric vehicles alone will absolve these industries of decades of sprawl, asphalt bloat, and pollution.
+          </p>
+          <div class="callout policy">
+            <span class="callout-label">Our Position</span>
+            We support groups, organizations, and policies that incentivize denser development and walkable neighborhoods. We are encouraged to see cities like Raleigh, Durham, and Charlotte—alongside municipalities across the country—enacting zoning reform, eliminating mandatory parking minimums, and legalizing accessory dwelling units (ADUs).
+          </div>
+        </section>
+      </main>
+    </article>
+  </div>
+</body>
+</html>
